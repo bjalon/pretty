@@ -20,6 +20,7 @@ function App() {
   return (
     <>
       <div className="card">
+        <h1>Tables de multiplication</h1>
         <span style={{margin: 10}} >Combien vaut {nombreGauche} x {nombreDroite} =</span>
         <input type="text" value={resultat ?? ""} onChange={(value) => setResultat(value.target.value)} />
         <br/>
