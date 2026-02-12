@@ -2,6 +2,10 @@
 
 Cette application React + TypeScript propose un petit exercice de calcul mental.
 
+## Application en ligne
+
+Lien GitHub Pages: https://bjalon.github.io/pretty/
+
 ## Ce que fait l'application
 
 - Affiche une multiplication aléatoire entre deux nombres de 0 a 10.
@@ -17,3 +21,7 @@ npm run dev
 ```
 
 Puis ouvrir l'URL affichee par Vite (generalement `http://localhost:5173`).
+
+## Deploiement GitHub Pages
+
+Le deploiement est automatise via GitHub Actions (`.github/workflows/deploy-pages.yml`) a chaque push sur `main`.
