@@ -125,6 +125,36 @@
   color: var(--text-soft);
 }
 
+.qrGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.qrCard {
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 14px;
+  padding: 0.55rem;
+  display: grid;
+  gap: 0.45rem;
+  justify-items: center;
+}
+
+.qrImage {
+  width: 100%;
+  max-width: 160px;
+  border-radius: 10px;
+}
+
+.qrLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+
 .installButton {
   margin-top: 0.35rem;
   border: 0;
@@ -211,6 +241,27 @@
   .hint,
   .iosHint {
     font-size: 1rem;
+  }
+
+  .qrGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .qrCard {
+    grid-template-columns: 90px 1fr;
+    align-items: center;
+    justify-items: start;
+    gap: 0.8rem;
+    padding: 0.6rem;
+  }
+
+  .qrImage {
+    max-width: 90px;
+  }
+
+  .qrLabel {
+    font-size: 0.95rem;
+    text-align: left;
   }
 
   .installButton {

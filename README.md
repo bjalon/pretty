@@ -6,6 +6,16 @@ Cette application React + TypeScript propose un petit exercice de calcul mental.
 
 Lien GitHub Pages: https://bjalon.github.io/pretty/
 
+## QR codes
+
+### Depot GitHub
+
+[![QR code depot GitHub](./public/qr-github.png)](https://github.com/bjalon/pretty)
+
+### Application en ligne
+
+[![QR code application en ligne](./public/qr-app.png)](https://bjalon.github.io/pretty/)
+
 ## Ce que fait l'application
 
 - Affiche une multiplication aléatoire entre deux nombres de 0 a 10.

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import {useEffect, useRef, useState} from 'react'
 import './App.css'
 
 interface BeforeInstallPromptEvent extends Event {
@@ -21,6 +21,10 @@ function App() {
   const isStandalone =
     window.matchMedia('(display-mode: standalone)').matches ||
     Boolean((window.navigator as Navigator & { standalone?: boolean }).standalone)
+  const repoUrl = 'https://github.com/bjalon/pretty'
+  const appUrl = 'https://bjalon.github.io/pretty/'
+  const repoQrUrl = `${import.meta.env.BASE_URL}qr-github.png`
+  const appQrUrl = `${import.meta.env.BASE_URL}qr-app.png`
 
   useEffect(() => {
     if (isValid) {
@@ -68,8 +72,8 @@ function App() {
 
   return (
     <main className="app">
-      <div className="bgShape bgShapeOne" />
-      <div className="bgShape bgShapeTwo" />
+      <div className="bgShape bgShapeOne"/>
+      <div className="bgShape bgShapeTwo"/>
       <section className="card">
         <p className="eyebrow">Calcul mental</p>
         <h1 className="title">Tables de multiplication</h1>
@@ -104,11 +108,20 @@ function App() {
         </p>
         <p className="hint">Une bonne reponse charge automatiquement un nouvel exercice.</p>
 
-        {!isStandalone && installPrompt && (
-          <button className="installButton" type="button" onClick={handleInstallClick}>
-            Installer l&apos;app
-          </button>
-        )}
+        <div className="qrGrid">
+          <a className="qrCard" href={repoUrl} target="_blank" rel="noreferrer">
+            <img className="qrImage" src={repoQrUrl} alt="QR code vers le depot GitHub"/>
+            <span className="qrLabel">Depot GitHub</span>
+          </a>
+          <a className="qrCard" href={appUrl} target="_blank" rel="noreferrer">
+            <img className="qrImage" src={appQrUrl} alt="QR code vers l'application en ligne"/>
+            <span className="qrLabel">Application en ligne</span>
+          </a>
+        </div>
+
+        <button className="installButton" type="button" onClick={handleInstallClick}>
+          Installer l&apos;app
+        </button>
         {!isStandalone && !installPrompt && isIos && (
           <p className="iosHint">
             Sur iPhone: bouton Partager puis <strong>Sur l&apos;ecran d&apos;accueil</strong>.
