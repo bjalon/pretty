@@ -10,11 +10,15 @@ Lien GitHub Pages: https://bjalon.github.io/pretty/
 
 ### Depot GitHub
 
-[![QR code depot GitHub](./public/qr-github.png)](https://github.com/bjalon/pretty)
+<a href="https://github.com/bjalon/pretty">
+  <img src="./public/qr-github.png" alt="QR code depot GitHub" width="170" />
+</a>
 
 ### Application en ligne
 
-[![QR code application en ligne](./public/qr-app.png)](https://bjalon.github.io/pretty/)
+<a href="https://bjalon.github.io/pretty/">
+  <img src="./public/qr-app.png" alt="QR code application en ligne" width="170" />
+</a>
 
 ## Ce que fait l'application
 
