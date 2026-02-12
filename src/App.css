@@ -1,42 +1,166 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 1.2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app {
+  min-height: calc(100vh - 2.4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bgShape {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(0.4px);
+  animation: drift 12s ease-in-out infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.bgShapeOne {
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle at 30% 30%, #fdba74, #fb923c);
+  top: 8%;
+  left: -60px;
+}
+
+.bgShapeTwo {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle at 30% 30%, #67e8f9, #22d3ee);
+  bottom: 5%;
+  right: -80px;
+  animation-delay: 0.8s;
 }
 
 .card {
-  padding: 2em;
+  z-index: 1;
+  width: min(100%, 560px);
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 2.2rem;
+  display: grid;
+  gap: 1.05rem;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.14);
 }
 
-.read-the-docs {
-  color: #888;
+.eyebrow {
+  margin: 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #0369a1;
+}
+
+.title {
+  margin: 0;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+  line-height: 1.1;
+  color: #0c4a6e;
+}
+
+.question {
+  margin: 0;
+  font-size: clamp(1.12rem, 3.2vw, 1.45rem);
+  color: var(--text-soft);
+}
+
+.number {
+  display: inline-block;
+  min-width: 2ch;
+  text-align: center;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.answerInput {
+  width: 100%;
+  font: inherit;
+  font-size: 1.15rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.answerInput:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
+}
+
+.status {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  width: fit-content;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.status.ok {
+  color: #166534;
+}
+
+.status.ko {
+  color: #b91c1c;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 640px) {
+  #root {
+    padding: 0.75rem;
+  }
+
+  .app {
+    min-height: calc(100vh - 1.5rem);
+  }
+
+  .card {
+    padding: 1.3rem;
+    border-radius: 16px;
+    gap: 0.85rem;
+  }
+
+  .bgShapeOne {
+    width: 170px;
+    height: 170px;
+    top: 2%;
+    left: -55px;
+  }
+
+  .bgShapeTwo {
+    width: 190px;
+    height: 190px;
+    bottom: 2%;
+    right: -65px;
+  }
+
+  .answerInput {
+    font-size: 1rem;
+  }
 }
